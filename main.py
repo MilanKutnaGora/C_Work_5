@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     # Получите идентификаторы компаний из вашего кода
     company_ids = [1740, 84585, 577743, 2381, 3529, 1057, 115, 903111, 4167790, 16206]
-    sql_file = "query.sql"
+    sql_file = "table.sql"
     db_name = input("Введите название бд: ")
     params = config()
     create_database(db_name, params)
