@@ -1,6 +1,6 @@
-from config import config
-from db_manager import DBManager
-from utils import create_database, insert_data, create_tables, get_employer_info
+from config_parser import config
+from dbm import DBManager
+from work_utils import create_database, insert_data, create_tables, get_employer_info
 
 if __name__ == '__main__':
     """
