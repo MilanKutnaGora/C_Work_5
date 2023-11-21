@@ -1,5 +1,3 @@
-from Scripts.activate_this import base
-
 from config_parser import config
 from dbm import DBManager
 from work_utils import create_database, insert_data, create_tables, get_employer_info
@@ -12,7 +10,7 @@ if __name__ == '__main__':
     # Получите идентификаторы компаний из вашего кода
     company_ids = [1490605, 15474, 213221, 1312952, 903198, 3288498, 2937002, 3389204, 239363, 227780]
     sql_file = "table.sql"
-    db_name = base
+    db_name = 'base'
     params = config()
     create_database(db_name, params)
     create_tables(db_name, params)
@@ -38,22 +36,21 @@ if __name__ == '__main__':
         match user_choice:
             case "1":
                 print(db_manager.get_companies_and_vacancies_count())
-                print("*" * 50)
+
             case "2":
                 print(db_manager.get_all_vacancies())
-                print("*" * 50)
+
             case "3":
                 print(db_manager.get_avg_salary())
-                print("*" * 50)
+
             case "4":
                 print(db_manager.get_vacancies_with_higher_salary())
-                print("*" * 50)
+
             case "5":
                 word = input("")
                 print(db_manager.get_vacancies_with_keyword(word))
-                print("*" * 50)
+
             case "0":
                 quit()
             case _:
-                print("неверный ввод")
-                print("*" * 50)
+                print("некорректный ввод")
