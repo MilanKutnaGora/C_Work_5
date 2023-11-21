@@ -1,16 +1,18 @@
+from Scripts.activate_this import base
+
 from config_parser import config
 from dbm import DBManager
 from work_utils import create_database, insert_data, create_tables, get_employer_info
 
 if __name__ == '__main__':
     """
-    Основной скрипт для работы с базой данных и вывода информации пользователю.
+    Основной скрипт для работы с базой данных и вывода информации.
     """
 
     # Получите идентификаторы компаний из вашего кода
     company_ids = [1490605, 15474, 213221, 1312952, 903198, 3288498, 2937002, 3389204, 239363, 227780]
     sql_file = "table.sql"
-    db_name = input("Введите название бд: ")
+    db_name = base
     params = config()
     create_database(db_name, params)
     create_tables(db_name, params)
